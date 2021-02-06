@@ -289,9 +289,9 @@ make -f tensorflow/lite/micro/tools/make/Makefile generate_projects
 <img src="image/cmsis和reference.png" width=80% />
 </div>
 
-**注：CMSIS NN 是 Arm 在 AI 领域针对 IOT 设备开发神经网络加速库，其目的是为了让 AI 在算力和资源有限的设备上落地，更好的发挥 Arm 的生态优势。相关代码和文档已经开源 (https://www.keil.com/pack/doc/CMSIS/NN/html/index.html)。在 Tensorflow Lite Micro 框架下基于 CMSIS NN 加速库设计的 CMSIS NN 算子与 reference 算子的性能对比可参考[附录](./TFlite_Micro_Component_User_Guide.md#%E9%99%84%E5%BD%95cmsis-nn-%E5%AF%B9-tensorflow-lite-micro-%E7%9A%84%E8%BF%90%E7%AE%97%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96) 。**
+**注：CMSIS-NN 是 Arm 在 AI 领域针对 IOT 设备开发神经网络加速库，其目的是为了让 AI 在算力和资源有限的设备上落地，更好的发挥 Arm 的生态优势。相关代码和文档已经开源 (https://www.keil.com/pack/doc/CMSIS/NN/html/index.html) 。在 Tensorflow Lite Micro 框架下基于 CMSIS-NN 加速库设计的 CMSIS-NN 算子与 reference 算子的性能对比可参考[附录](./TFlite_Micro_Component_User_Guide.md#%E9%99%84%E5%BD%95cmsis-nn-%E5%AF%B9-tensorflow-lite-micro-%E7%9A%84%E8%BF%90%E7%AE%97%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96) 。**
 
-#### 2.1.1 采用 CMSIS NN 生成 .lib 文件 ####
+#### 2.1.1 采用 CMSIS-NN 生成 .lib 文件 ####
 
 需要：
 
@@ -328,7 +328,7 @@ make -f tensorflow/lite/micro/tools/make/Makefile generate_projects
 
 最后点击编译链接选项，即可在工程根目录的 `Objects` 文件夹下生成 ARM Cortex M4 对应的 .lib 库。其他内核型号的 tflite_micro 库以此类推。
 
-## 附录：CMSIS NN 对 Tensorflow Lite Micro 的运算性能优化
+## 附录：CMSIS-NN 对 Tensorflow Lite Micro 的运算性能优化
 
 - 硬件平台：Necluo STM32L496ZG
 - 测试输入图片：`tensorflow\lite\micro\tools\make\downloads\person_model_int8` 目录 `person_image_data.cc` 和 `no_person_image_data.cc` 中保存的 96 * 96 ( uint_8 ) 灰度图。
