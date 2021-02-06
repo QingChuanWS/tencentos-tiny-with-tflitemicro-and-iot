@@ -289,7 +289,7 @@ make -f tensorflow/lite/micro/tools/make/Makefile generate_projects
 <img src="image/cmsis和reference.png" width=80% />
 </div>
 
-**注：CMSIS NN 是 Arm 在 AI 领域针对 IOT 设备开发神经网络加速库，其目的是为了让 AI 在算力和资源有限的设备上落地，更好的发挥 Arm 的生态优势。相关代码和文档已经开源 (https://www.keil.com/pack/doc/CMSIS/NN/html/index.html)。在 Tensorflow Lite Micro 框架下基于 CMSIS NN 加速库设计的 CMSIS NN 算子与 reference 算子的性能对比可参考 [附录] (#附录：CMSIS NN 对 Tensorflow Lite Micro 的运算性能优化)。**
+**注：CMSIS NN 是 Arm 在 AI 领域针对 IOT 设备开发神经网络加速库，其目的是为了让 AI 在算力和资源有限的设备上落地，更好的发挥 Arm 的生态优势。相关代码和文档已经开源 (https://www.keil.com/pack/doc/CMSIS/NN/html/index.html)。在 Tensorflow Lite Micro 框架下基于 CMSIS NN 加速库设计的 CMSIS NN 算子与 reference 算子的性能对比可参考 [附录](#附录：CMSIS NN 对 Tensorflow Lite Micro 的运算性能优化)。**
 
 #### 2.1.1 采用 CMSIS NN 生成 .lib 文件 ####
 
