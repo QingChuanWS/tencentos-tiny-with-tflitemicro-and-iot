@@ -14,7 +14,7 @@
 
 ### 1.1.1  量化
 
-为了获得尽可能小的模型，某些情况下可以考虑使用[训练后量化](https://tensorflow.google.cn/lite/performance/post_training_quantization)。它会降低模型中数字的精度，从而减小模型规模，比如将 FP32 转化为 Int8。不过，这种操作可能会导致模型推理准确性的下降，对于小规模模型来说尤为如此，所以我们需要在量化前后分析模型的准确性，以确保这种损失在可接受范围内。
+为了获得尽可能小的模型，某些情况下可以考虑使用 [训练后量化](https://tensorflow.google.cn/lite/performance/post_training_quantization) 。它会降低模型中数字的精度，从而减小模型规模，比如将 FP32 转化为 Int8。不过，这种操作可能会导致模型推理准确性的下降，对于小规模模型来说尤为如此，所以我们需要在量化前后分析模型的准确性，以确保这种损失在可接受范围内。
 
 以下这段 Python 代码片段展示了如何使用预训练量化进行模型转换：
 
@@ -113,7 +113,7 @@ tflite::ErrorReporter* error_reporter = &micro_error_reporter;
 
 ### 1.3.3 加载模型
 
-在以下代码中，实例化的 `char` 数组中包含了模型信息，`g_tiny_conv_micro_features_model_data` （要了解其是如何构建的，请参见[“构建与转换模型”](https://tensorflow.google.cn/lite/microcontrollers/build_convert)。随后我们检查模型来确保其架构版本与我们使用的版本所兼容：
+在以下代码中，实例化的 `char` 数组中包含了模型信息，`g_tiny_conv_micro_features_model_data` （要了解其是如何构建的，请参见 [“构建与转换模型”](https://tensorflow.google.cn/lite/microcontrollers/build_convert) 。随后我们检查模型来确保其架构版本与我们使用的版本所兼容：
 
 ```C++
 const tflite::Model* model =
@@ -242,7 +242,7 @@ git clone --depth 1 https://github.com/QingChuanWS/tensorflow.git
 git checkout 5e0ed38eb746f3a86463f19bcf7138a959ddb2d4
 ```
 
-注：进行 checkout 的原因是由于 Tensorflow 官方仓库的更新速度较快，为了方便开发者学习 .lib 库的制作方法，作者将使用上述版本来进行演示，开发者如果在实际操作过程中出现问题的话也可以通过[此链接](https://github.com/QingChuanWS/tensorflow)直接获得作者所使用的Tensorflow工程。
+注：进行 checkout 的原因是由于 Tensorflow 官方仓库的更新速度较快，为了方便开发者学习 .lib 库的制作方法，作者将使用上述版本来进行演示，开发者如果在实际操作过程中出现问题的话也可以通过 [此链接](https://github.com/QingChuanWS/tensorflow) 直接获得作者所使用的Tensorflow工程。
 
 进入 clone 好的仓库：
 
