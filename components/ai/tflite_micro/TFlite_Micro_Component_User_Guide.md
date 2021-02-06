@@ -66,7 +66,7 @@ unsigned int converted_model_tflite_len = 18200;
 
 ### 1.2.3 运算支持
 
-TensorFlow Lite Micro 目前仅支持有限的 TensorFlow 算子，因此可运行的模型也有所限制。我们正致力于在参考实现和针对特定结构的优化方面扩展运算支持。Arm 的 CMSIS NN 开源加速库也为算子的支持和优化提供了另一种可能。
+TensorFlow Lite Micro 目前仅支持有限的 TensorFlow 算子，因此可运行的模型也有所限制。我们正致力于在参考实现和针对特定结构的优化方面扩展运算支持。Arm 的 CMSIS-NN 开源加速库也为算子的支持和优化提供了另一种可能。
 
 已支持的运算可以在文件 [`all_ops_resolver.cc`](https://github.com/tensorflow/tensorflow/tree/5e0ed38eb746f3a86463f19bcf7138a959ddb2d4/tensorflow/lite/micro/all_ops_resolver.cc) 中看到。
 
@@ -331,13 +331,12 @@ make -f tensorflow/lite/micro/tools/make/Makefile generate_projects
 ## 附录：CMSIS-NN 对 Tensorflow Lite Micro 的运算性能优化
 
 - 硬件平台：Necluo STM32L496ZG
-- 测试输入图片：`tensorflow\lite\micro\tools\make\downloads\person_model_int8` 目录 `person_image_data.cc` 和 `no_person_image_data.cc` 中保存的 96 * 96 ( uint_8 ) 灰度图。
-- 单次执行和 10 次迭代的测试结果如下：
+- 测试输入图片：`tensorflow\lite\micro\tools\make\downloads\person_model_int8` 目录中 `person_image_data.cc` 和 `no_person_image_data.cc` 保存的 96 * 96 pixels ( uint_8 ) 灰度图。
+- 单次执行和 10 次累计执行的测试结果如下：
 
-|                      Case                      |   Without ARM-CMSIS-NN   |   With ARM-CMSISNN   | Improvement |
+|                      Case                      |   Disable ARM-CMSIS-NN   |   Enable ARM-CMSIS-NN   | Improvement |
 | :--------------------------------------------: | :----------------------: | :------------------: | :---------: |
 |          Initialize_Benchmark_Runner           |     65 ticks (65 ms)     |   66 ticks (66 ms)   |      *      |
 |              Run_Single_Iteration              |  12476 ticks (12476 ms)  |  633 ticks (633 ms)  |   19.71X    |
 |   Person_Detection_Ten_Ierations_With_Person   | 124769 ticks (124769 ms) | 6324 ticks (6324 ms) |   19.73X    |
 | Person_Detection_Ten_Ierations_With_out_Person | 124770 ticks (124770 ms) | 6325 ticks (6325 ms) |   19.72X    |
-
